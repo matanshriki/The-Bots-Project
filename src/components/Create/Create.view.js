@@ -136,19 +136,18 @@ class Create extends Component {
                         </ERROR_MSG> */}
                         <Space />
                         <Input onChange={this.inputChanged} name="last_name" type="text" placeholder="Last Name"
-                            error_styled={this.state.error_field == 'first_name'}
+                            error_styled={this.state.error_field == 'last_name'}
                             onBlur={this.validate_form}
                             onFocus={this.hide_errors} />
                     </Box>
                     <MiniTitle> Email</MiniTitle>
                     <Input onChange={this.inputChanged} name="email" type="email" placeholder="Email"
-                        error_styled={this.state.error_field == 'first_name'}
+                        error_styled={this.state.error_field == 'email'}
                         onBlur={this.validate_form}
                         onFocus={this.hide_errors} />
                     <MiniTitle> Country </MiniTitle>
                     <CountrySelect onChange={this.selectCountry} value={this.state.country} />
                     <MiniTitle> Description</MiniTitle>
-                    {/* <textarea onChange={this.inputChanged} rows="6" name='description' placeholder='Tell us a bit about the bot...' /> */}
                     <Description onChange={this.inputChanged} rows="6"
                         name='description' placeholder='Tell us a bit about the bot...' 
                          error_styled={this.state.error_field == 'description'}
@@ -194,12 +193,13 @@ const Title = styled.h1`
     background: -webkit-linear-gradient(gold, coral);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin-top: 10rem;
 `;
 
 const MiniTitle = styled.h3`
     display: flex;
     justify-content: center;
-    margin-bottom:2rem;
+    /* margin-bottom:2rem; */
     font-weight: normal;
     font-family: 'Griffy', cursive;
     text-shadow: 2px 2px 10px rgba(71, 0, 37, .2);
@@ -214,6 +214,7 @@ const MiniTitle = styled.h3`
     /* font-size:2rem; */
     font-family:'Arial';
     margin-bottom:.5rem;
+    margin-top: 1rem;
 `;
 
 const ERROR_MSG = styled.h1`
@@ -292,12 +293,13 @@ const Space = styled.div`
 const Form = styled.form`
     /* border:cyan solid 1px; */
     width: 100%;
-    padding:1rem;
+    padding:10rem;
     display:flex;
     flex-direction:column;
     align-items:center;
-    min-height:95rem;
-    min-width:95rem;
+    /* min-height:70rem; */
+    min-width:75rem;
+    min-height:75rem;
     background: white;
     border-radius:6px;
     box-shadow: inset 0px 0px 14px 1px rgba(133,133,133,1);
